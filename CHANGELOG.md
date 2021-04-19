@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.5.0](https://www.github.com/googleapis/nodejs-dialogflow-cx/compare/v2.4.0...v2.5.0) (2021-04-19)
+
+
+### Features
+
+* include original user query in WebhookRequest; add GetTextCaseresult API.  ([528192e](https://www.github.com/googleapis/nodejs-dialogflow-cx/commit/528192eb11453502332a35ff5838130e19c5e869))
+* include original user query in WebhookRequest; add GetTextCaseresult API. doc: clarify resource format for session response. ([#82](https://www.github.com/googleapis/nodejs-dialogflow-cx/issues/82)) ([ff13a97](https://www.github.com/googleapis/nodejs-dialogflow-cx/commit/ff13a9708fccc0bf85f7972328dc289b50fdac20))
+* support setting current_page to resume sessions; expose transition_route_groups in flows and language_code in webhook ([#90](https://www.github.com/googleapis/nodejs-dialogflow-cx/issues/90)) ([53f1e21](https://www.github.com/googleapis/nodejs-dialogflow-cx/commit/53f1e21deaf3adee3493b398529fc75baae70f99))
+* support setting current_page to resume sessions; expose transition_route_groups in flows and language_code in webhook ([#91](https://www.github.com/googleapis/nodejs-dialogflow-cx/issues/91)) ([cd125d3](https://www.github.com/googleapis/nodejs-dialogflow-cx/commit/cd125d35c75ad740d3aa46d5af4a2142aaa051f1))
+
 ## [2.4.0](https://www.github.com/googleapis/nodejs-dialogflow-cx/compare/v2.3.0...v2.4.0) (2021-03-15)
 
 
