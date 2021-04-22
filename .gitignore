@@ -11,4 +11,5 @@ system-test/*key.json
 *.lock
 .DS_Store
 package-lock.json
+gcp-service-account-key/
 __pycache__

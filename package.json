@@ -50,6 +50,8 @@
     "samples-test": "cd samples/ && npm link ../ && npm test"
   },
   "dependencies": {
+    "@google-cloud/dialogflow-cx": "^2.4.0",
+    "@google-cloud/storage": "^5.8.4",
     "google-gax": "^2.9.2"
   },
   "devDependencies": {
