@@ -11,18 +11,10 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
-'use strict';
+require('dotenv').config();
+('use strict');
 
 async function main(projectId, location, agentId) {
-  // [START dialogflow_cx_list_intents]
-  /**
-   * TODO(developer): Uncomment these variables before running the sample.
-   */
-  // const projectId = 'my-project';
-  // const location = 'global';
-  // const agentId = 'my-agent';
-
   // Imports the Google Cloud Some API library
   const {IntentsClient} = require('@google-cloud/dialogflow-cx');
   /**
