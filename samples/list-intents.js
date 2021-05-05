@@ -11,18 +11,33 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-require('dotenv').config();
+
+require('dotenv').config({path: '../.env'});
 ('use strict');
+
+const projectId = process.env.projectId;
+const location = process.env.location;
+const agentId = process.env.agentId;
+
+console.log(projectId);
+console.log(location);
+console.log(agentId);
+
+// console.log(ENV.projectId);
+// console.log(ENV.location);
+// console.log(ENV.agentId);
 
 async function main(projectId, location, agentId) {
   // Imports the Google Cloud Some API library
   const {IntentsClient} = require('@google-cloud/dialogflow-cx');
-  /**
-   * Example for regional endpoint:
-   *   const location = 'us-central1'
-   *   const client = new SessionsClient({apiEndpoint: 'us-central1-dialogflow.googleapis.com'})
-   */
+
+  // //não sei se o endpoint abaixo está certo
+  // const client = new SessionsClient({
+  //   apiEndpoint: 'us-east1-dialogflow.googleapis.com',
+  // });
+
   const client = new IntentsClient();
+  console.log(client);
 
   async function listIntents() {
     const parent = client.agentPath(projectId, location, agentId);

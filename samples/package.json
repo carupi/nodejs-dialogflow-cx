@@ -14,12 +14,19 @@
   },
   "dependencies": {
     "@google-cloud/dialogflow-cx": "^2.5.0",
-    "dotenv": "^8.3.0",
+    "dotenv": "^8.4.0",
     "uuid": "^8.3.1"
   },
   "devDependencies": {
     "c8": "^7.3.0",
     "chai": "^4.2.0",
     "mocha": "^8.1.1"
-  }
+  },
+  "description": "[//]: # \"This README.md file is auto-generated, all changes to this file will be lost.\" [//]: # \"To regenerate it, use `python -m synthtool`.\" <img src=\"https://avatars2.githubusercontent.com/u/2810941?v=3&s=96\" alt=\"Google Cloud Platform logo\" title=\"Google Cloud Platform\" align=\"right\" height=\"96\" width=\"96\"/>",
+  "version": "1.0.0",
+  "main": "detect-intent-audio.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": []
 }
