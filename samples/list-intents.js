@@ -5,29 +5,31 @@ const projectId = process.env.projectId;
 const location = process.env.location;
 const agentId = process.env.agentId;
 
-console.log(projectId);
-console.log(location);
-console.log(agentId);
+// console.log(projectId);
+// console.log(location);
+// console.log(agentId);
 
 async function main(projectId, location, agentId) {
-  const {IntentsClient} = require('@google-cloud/dialogflow-cx');
+  const {IntentsClient} = require('@google-cloud/dialogflow-cx'); //original
+  const {SessionsClient} = require('@google-cloud/dialogflow-cx'); //tentativa
 
-  // const client = new SessionsClient({
-  //   apiEndpoint: 'us-east1-dialogflow.googleapis.com',
-  // });
-
-  const client = new IntentsClient();
-  console.log(client);
+  const clientI = new IntentsClient({
+    apiEndpoint: 'us-east1-dialogflow.googleapis.com',
+  }); //original
+  const clientS = new SessionsClient({
+    apiEndpoint: 'us-east1-dialogflow.googleapis.com',
+  });
 
   async function listIntents() {
     // problem happens here!!!
-    const parent = client.agentPath(projectId, location, agentId);
-    console.info(parent);
-
-    const [intents] = await client.listIntents({
+    const parent = clientI.agentPath(projectId, location, agentId);
+    const [intents] = await clientI.listIntents({
       parent,
       pageSize: 100,
     });
+
+    console.log('teste');
+
     intents.forEach(intent => {
       console.log('====================');
       console.log(`Intent name: ${intent.name}`);
@@ -41,7 +43,9 @@ async function main(projectId, location, agentId) {
   // [END dialogflow_cx_list_intents]
 }
 
-main(...process.argv.slice(2));
+// main(...process.argv.slice(2));
+main(projectId, location, agentId);
+
 process.on('unhandledRejection', err => {
   console.error(err.message);
   process.exitCode = 1;
