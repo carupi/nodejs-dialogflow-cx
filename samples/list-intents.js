@@ -1,17 +1,3 @@
-// Copyright 2020 Google LLC
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 require('dotenv').config({path: '../.env'});
 ('use strict');
 
@@ -23,15 +9,9 @@ console.log(projectId);
 console.log(location);
 console.log(agentId);
 
-// console.log(ENV.projectId);
-// console.log(ENV.location);
-// console.log(ENV.agentId);
-
 async function main(projectId, location, agentId) {
-  // Imports the Google Cloud Some API library
   const {IntentsClient} = require('@google-cloud/dialogflow-cx');
 
-  // //não sei se o endpoint abaixo está certo
   // const client = new SessionsClient({
   //   apiEndpoint: 'us-east1-dialogflow.googleapis.com',
   // });
@@ -40,6 +20,7 @@ async function main(projectId, location, agentId) {
   console.log(client);
 
   async function listIntents() {
+    // problem happens here!!!
     const parent = client.agentPath(projectId, location, agentId);
     console.info(parent);
 
