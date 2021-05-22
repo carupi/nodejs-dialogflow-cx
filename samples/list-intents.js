@@ -11,19 +11,19 @@ const agentId = process.env.agentId;
 
 async function main(projectId, location, agentId) {
   const {IntentsClient} = require('@google-cloud/dialogflow-cx'); //original
-  const {SessionsClient} = require('@google-cloud/dialogflow-cx'); //tentativa
+  // const {SessionsClient} = require('@google-cloud/dialogflow-cx'); //tentativa
 
-  const clientI = new IntentsClient({
+  const client = new IntentsClient({
     apiEndpoint: 'us-east1-dialogflow.googleapis.com',
   }); //original
-  const clientS = new SessionsClient({
-    apiEndpoint: 'us-east1-dialogflow.googleapis.com',
-  });
+  // const clientS = new SessionsClient({
+  //   apiEndpoint: 'us-east1-dialogflow.googleapis.com',
+  // });
 
   async function listIntents() {
     // problem happens here!!!
-    const parent = clientI.agentPath(projectId, location, agentId);
-    const [intents] = await clientI.listIntents({
+    const parent = client.agentPath(projectId, location, agentId);
+    const [intents] = await client.listIntents({
       parent,
       pageSize: 100,
     });
